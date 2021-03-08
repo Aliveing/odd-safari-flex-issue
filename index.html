@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    html, body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-y: auto;
+      color: white;
+    }
+    .total{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .navbar{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      padding: 1rem 1rem;
+      background-color: tomato;
+    }
+    .logo{
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .btn {
+      height: 1rem;
+      width: 1rem;
+      background-color: gray;
+    }
+    main{
+      flex: 1 0 auto;
+      background-color: gold;
+    }
+    .content{
+      background-color: green;
+    }
+    .flex-none{
+      flex: none; // NOTE: temporary solution
+    }
+    .toggle-btn{
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      height: 4rem;
+      width: 4rem;
+      color: white;
+      display: inline-block;
+    }
+  </style>
+  <script>
+    function change(){
+      var navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('flex-none');
+    }
+  </script>
+</head>
+<body>
+  <button class="toggle-btn" onclick="change()">Toggle</button>
+  <div class="total">
+    <div class="navbar flex-none">
+      <a class="logo">LOGO</a>
+      <span class="btn"></span>
+    </div>
+    <main>
+      <br />
+      <div style="height: 200vh" class="content"></div>
+    </main>
+  </div>
+</body>
+</html>
